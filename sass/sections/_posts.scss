@@ -1,0 +1,70 @@
+#posts
+{
+	.post-single
+	{
+		transition: $transition;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+		&:hover
+		{
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+		}
+		h1
+		{
+			transition: $transition;
+			@include h1($mainFontSize*1.6, $mainFontWeight*1.5, $mainColor4, $letterSpacing*2, $lineHeight);
+			&:hover
+			{
+				color: $mainColor;
+				cursor: pointer;
+			}
+		}
+		p
+		{
+			@include p($mainFontSize, $mainFontWeight, $mainColor5, $letterSpacing*2, $mainFontStyle, $lineHeight);
+		}
+		i
+		{
+			color: $mainColor;
+		}
+		.fa-heart
+		{
+			font-size: $mainFontSize*1.2;
+		}
+		span
+		{
+			color: $mainColor8;
+			cursor: pointer;
+			transition: $transition;
+			&:hover
+			{
+				color: $mainColor;
+			}
+		}
+		.read-more
+		{
+			position: relative;
+			font-size: $mainFontSize*0.9;
+			letter-spacing: $letterSpacing*2;
+			&::after
+			{
+				content: "";
+				width: 30px;
+				height: 1px;
+				background: $mainColor;
+				position: absolute;
+				top: 25px;
+				left: -30px;
+				opacity: 0;
+				transition: $transition;
+			}
+			&:hover
+			{
+				&::after
+				{
+					opacity: 1;
+					left: 0;
+				}
+			}
+		}
+	}
+}

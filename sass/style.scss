@@ -1,0 +1,22 @@
+@import 'lib/reset';
+@import 'lib/variables';
+@import 'lib/common';
+@import 'lib/mixins';
+
+// import sections
+
+@import 'sections/header';
+@import 'sections/slider';
+@import 'sections/feature';
+@import 'sections/about-us';
+@import 'sections/what';
+@import 'sections/works';
+@import 'sections/experts';
+@import 'sections/clients';
+@import 'sections/logo';
+@import 'sections/license';
+@import 'sections/posts';
+@import 'sections/subscribe';
+@import 'sections/map';
+@import 'sections/contacts';
+@import 'sections/footer';

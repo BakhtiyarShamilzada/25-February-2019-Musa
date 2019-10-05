@@ -1,0 +1,66 @@
+.section-heading
+{
+	h1
+	{
+		@include h1($mainFontSize*2.3, $mainFontWeight*1.5, $mainColor4, $letterSpacing*2, $lineHeight);
+	}
+	p
+	{
+		@include p($mainFontSize, $mainFontWeight, $mainColor5, $letterSpacing*2, $mainFontStyle, $lineHeight);
+	}
+}
+
+.what-single
+{
+	position: relative;
+	text-align: center;
+	top: 0px;
+	transition: $transition*1.7;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+	.icon1
+	{
+		transition: $transition*2;
+		position: relative;
+		top: 20px;
+		width: 36px;
+		height: 36px;
+		border: 1px solid $mainColor;
+		i
+		{
+			@include i($mainFontSize*1.1, none, $mainColor, $mainColor, $lineHeight);
+		}
+	}
+	.icon
+	{
+		transition: $transition*2;
+		position: relative;
+		top: 20px;
+		width: 36px;
+		height: 36px;
+		i
+		{
+			@include i($mainFontSize*2.5, none, $mainColor, $mainColor, $lineHeight);
+		}
+	}
+	h1
+	{
+		font-family: $mainFontSansSerif;
+		@include h1($mainFontSize*1.4, $mainFontWeight, $mainColor4, $letterSpacing*2, $lineHeight);
+	}
+	p
+	{
+		@include p($mainFontSize*0.9, $mainFontWeight, $mainColor8, $letterSpacing*2, $mainFontStyle, $lineHeight);
+	}
+	&:hover
+	{
+		top: -10px;
+		.icon1
+		{
+			top: 10px;
+		}
+		.icon
+		{
+			top: 10px;
+		}
+	}
+}

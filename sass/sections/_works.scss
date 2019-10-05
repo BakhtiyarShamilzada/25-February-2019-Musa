@@ -1,0 +1,251 @@
+#works
+{
+	background: #f6f6f6;
+	.section-heading
+	{
+		h1
+		{
+			@include h1($mainFontSize*2.3, $mainFontWeight*1.5, $mainColor4, $letterSpacing*2, $lineHeight);
+		}
+		p
+		{
+			@include p($mainFontSize, $mainFontWeight, $mainColor5, $letterSpacing*2, $mainFontStyle, $lineHeight);
+		}
+	}
+	.button-group
+	{
+		ul
+		{
+			text-align: center;
+			li
+			{
+				margin-right: 20px;
+				button
+				{
+					padding: 2px 0px!important;
+					border-radius: 2px;
+					@include button($mainColor3, $mainColor7, $mainColor7, $mainColor3, none, $mainColor);
+				}
+				a
+				{
+					padding: 6px 20px!important;
+					@include a($mainFontSize, $mainFontWeight*1.4, $mainColor4, $mainColor3, $letterSpacing*4);
+				}
+			}
+		}
+		.button-right
+		{
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+			a
+			{
+				position: relative;
+				z-index: 3;
+			}
+			&::before
+			{
+				content: "";
+				width: 50%;
+				height: 100%;
+				background: $mainColor;
+				position: absolute;
+				top: -100%;
+				left: 0;
+				transition: .3s top;
+				z-index: 2;
+			}
+			&::after
+			{
+				content: "";
+				width: 50%;
+				height: 100%;
+				background: $mainColor;
+				position: absolute;
+				right: 0;
+				top: 100%;
+				left: 50%;
+				transition: .3s top;
+				z-index: 2;
+			}
+			
+			&:hover
+			{
+				&::after
+				{
+					top: 0;
+				}
+				&::before
+				{
+					top: 0;
+				}
+			}
+		}
+	}
+	.col-10
+	{
+		overflow: hidden;
+		position: relative;
+		&:hover
+		{
+			overflow: hidden;
+			img
+			{
+				transform: scale(1.2);
+			}
+			.overlay
+			{
+				opacity: 1;
+				transform: scale(.9);
+				.content
+				{
+					opacity: 1;
+					transform: rotateX(0deg);
+				}
+				.icon
+				{
+					&:hover
+					{
+						top: 0px;
+					}
+				}
+			}
+		}
+	}
+	
+	img
+	{
+		transition: $transition;
+		transform: scale(1.07);
+		object-fit: cover;
+	}
+	.overlay
+	{
+		.content
+		{
+			opacity: 0;
+			transition: $transition;
+			transform: rotateX(65deg);
+		}
+		transition: $transition;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		text-align: center;
+		background: rgba($mainColor, .7);
+		transform: scale(.7);
+		top: 0;
+		left: 0;
+		.icon
+		{
+			transition: $transition*2;
+			border-radius: 100%;
+			position: relative;
+			top: 5px;
+			width: 50px;
+			height: 50px;
+			background: $mainColor3;
+			i
+			{
+				@include i($mainFontSize*2, none, $mainColor, $mainColor, $lineHeight);
+			}
+		}
+
+		h1
+		{
+			@include h1($mainFontSize*1.4, $mainFontWeight, $mainColor3, $letterSpacing*2, $lineHeight);
+		}
+		p
+		{
+			@include p($mainFontSize*0.9, $mainFontWeight, $mainColor3, $letterSpacing*2, $mainFontStyle2, $lineHeight);
+		}
+	}
+
+	.button-left
+	{
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+		a
+		{
+			position: relative;
+			z-index: 3;
+		}
+		&::after
+		{
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: $mainColor3;
+			position: absolute;
+			top: 0px;
+			left: -100%;
+			transition: .3s left;
+			z-index: 2;
+		}
+		&:hover
+		{
+			&::after
+			{
+				left: 0;
+			}
+		}
+	}
+	button
+	{
+		@include button($mainColor3, $mainColor, $mainColor, $mainColor, none, $mainColor);
+	}
+	a
+	{
+		@include a($mainFontSize, $mainFontWeight*1.4, $mainColor3, $mainColor, $letterSpacing*4);
+	}
+	.single-counter1
+	{
+		height: 174px;
+		background-image: url(../images/10.jpg);
+		.counter-inner
+		{
+			text-align: center;
+			width: 100%;
+			height: 100%;
+			transform: scale(.9);
+			background: rgba(255,255,255,.7);
+			.icon
+			{
+				transition: $transition*2;
+				position: relative;
+				top: 20px;
+				width: 36px;
+				height: 36px;
+				i
+				{
+					@include i($mainFontSize*3, none, $mainColor, $mainColor, $lineHeight);
+				}
+			}
+			h1
+			{
+				@include h1($mainFontSize*2.6, $mainFontWeight*1.5, $mainColor4, $letterSpacing*2, $lineHeight);
+			}
+			p
+			{
+				@include p($mainFontSize*1.1, $mainFontWeight*1.5, $mainColor4, $letterSpacing*2, $mainFontStyle, $lineHeight);
+			}
+		}
+	}
+	.single-counter2
+	{
+		@extend .single-counter1;
+		background-image: url(../images/11.jpg);
+	}
+	.single-counter3
+	{
+		@extend .single-counter1;
+		background-image: url(../images/12.jpg);
+	}
+	.single-counter4
+	{
+		@extend .single-counter1;
+		background-image: url(../images/13.jpg);
+	}
+}

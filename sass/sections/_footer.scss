@@ -1,0 +1,42 @@
+footer
+{
+	a
+	{
+		@include a($mainFontSize, $mainFontWeight*1.4, $mainColor, $mainColor, $letterSpacing*4);
+	}
+	ul
+	{
+		li
+		{
+			a
+			{
+				padding: 0px 10px!important;
+				transition: $transition;
+				@include a($mainFontSize, $mainFontWeight, $mainColor4, $mainColor, $letterSpacing);
+			}
+		}
+	}
+	.social-icon
+	{
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+		background: $mainColor3;
+		transition: $transition;
+		border: 2px solid $mainColor4;
+		i
+		{
+			transition-delay: $transition*2;
+			@include i($mainFontSize, none, $mainColor4, $mainColor3, $lineHeight);
+		}
+		&:hover
+		{
+			background: $mainColor;
+			border-color: $mainColor;
+			i
+			{
+				@include i($mainFontSize, none, $mainColor3, $mainColor3, $lineHeight);
+			}
+		}
+	}
+}

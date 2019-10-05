@@ -1,0 +1,95 @@
+#about
+{
+	background: #f6f6f6;
+	.left-heading
+	{
+		@include h1($mainFontSize*2.1, $mainFontWeight*1.5, $mainColor4, $letterSpacing*2, $lineHeight);
+	}
+	p
+	{
+		@include p($mainFontSize, $mainFontWeight, $mainColor5, $letterSpacing*2, $mainFontStyle, $lineHeight);
+	}
+	.icon
+	{
+		width: 45px;
+		height: 45px;
+		background: $mainColor;
+		transition: $transition;
+		i
+		{
+			@include i($mainFontSize*1.5, none, $mainColor3, $mainColor3, $lineHeight);
+		}
+	}
+	.social-icon
+	{
+		width: 40px;
+		height: 40px;
+		background: $mainColor3;
+		transition: $transition;
+		border: 2px solid $mainColor4;
+		i
+		{
+			transition-delay: $transition*2;
+			@include i($mainFontSize, none, $mainColor4, $mainColor3, $lineHeight);
+		}
+		&:hover
+		{
+			background: $mainColor;
+			border-color: $mainColor;
+			i
+			{
+				@include i($mainFontSize, none, $mainColor3, $mainColor3, $lineHeight);
+			}
+		}
+	}
+	a
+	{
+		@include a($mainFontSize, $mainFontWeight*1.4, $mainColor3, $mainColor, $letterSpacing*4);
+	}
+	button
+	{
+		@include button($mainColor3, $mainColor, $mainColor, $mainColor, none, $mainColor);
+		overflow: hidden;
+		position: relative;
+		z-index: 1;
+		a
+		{
+			position: relative;
+			z-index: 3;
+		}
+		&::after
+		{
+			content: "";
+			width: 135px;
+			height: 41px;
+			background: $mainColor3;
+			position: absolute;
+			top: 0px;
+			left: -135px;
+			transition: .3s left;
+			z-index: 2;
+		}
+		&:hover
+		{
+			&::after
+			{
+				left: 0;
+			}
+		}
+	}
+	.right-heading
+	{
+		font-family: $mainFontSansSerif;
+		@include h1($mainFontSize*1.6, $mainFontWeight*1.5, $mainColor4, $letterSpacing*2, $lineHeight);
+	}
+	.progress-bar
+	{
+		text-align: right;
+		background: $mainColor;
+		border-radius: 0px 10px 10px 0px;
+		span
+		{
+			margin-right: 10px;
+		}
+	}
+}	

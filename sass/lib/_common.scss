@@ -1,0 +1,35 @@
+body
+{
+	font-family: $mainFont;
+	font-size: $mainFontSize;
+	font-style: $mainFontStyle;
+	font-weight: $mainFontWeight;
+	line-height: $lineHeight;
+}
+.section-heading
+{
+	text-align: center;
+	.section-content
+	{
+		width: 49%;
+		letter-spacing: .5px;
+	}
+	.hr
+	{
+		width: 100px;
+		height: 2px;
+		background: $mainColor;
+		position: relative;
+		&::before
+		{
+			content: "";
+			width: 12px;
+			height: 12px;
+			top: -5px;
+			background: $mainColor;
+			position: absolute;
+			left: 45%;
+			transform: rotate(45deg);
+		}
+	}
+}

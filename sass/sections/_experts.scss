@@ -1,0 +1,102 @@
+#experts
+{
+	.team-single
+	{
+		h1
+		{
+			position: relative;
+			z-index: 1;
+			@include h1($mainFontSize*1.6, $mainFontWeight*1.5, $mainColor4, $letterSpacing*2, $lineHeight);
+		}
+		p
+		{
+			position: relative;
+			z-index: 1;
+			@include p($mainFontSize, $mainFontWeight, $mainColor, $letterSpacing*2, $mainFontStyle2, $lineHeight);
+		}
+		.hr
+		{
+			width: 100%;
+			height: 2px;
+			background: $mainColor;
+		}
+		.team-img
+		{
+			text-align: center;
+			overflow: hidden;
+			position: relative;
+			ul
+			{
+				text-align: center;
+				position: absolute;
+				width: 100%;
+				top: 45%;
+				opacity: 0;
+				transition: all .5s ease 0.1s;
+				.social-icon
+				{
+					width: 40px;
+					height: 40px;
+					transition: $transition;
+					border: 2px solid $mainColor3;
+					transition-delay: $transition;
+					i
+					{
+						top: 0px;
+						@include i($mainFontSize, none, $mainColor3, $mainColor3, $lineHeight);
+					}
+					&:hover
+					{
+						background: $mainColor;
+						border-color: $mainColor;
+						i
+						{
+							transition-delay: $transition*2;
+							@include i($mainFontSize, none, $mainColor3, $mainColor3, $lineHeight);
+						}
+					}
+				}
+			}
+			&::before
+			{
+				content: "";
+				position: absolute;
+				background: rgba(0,0,0,0.7);
+				top: 0;
+				left: 0;
+				width: 0;
+				height: 0;
+				opacity: 0;
+				transition: all .5s ease 0.1s;
+			}
+			&::after
+			{
+				content: "";
+				position: absolute;
+				top: 74%;
+				width: 100%;
+				height: 30%;
+				transform: skew(-79deg);
+				background: $mainColor3;
+				transition: all .3s ease 0.3s;
+			}
+			&:hover
+			{
+				&::after
+				{
+					transform: skewX(-90deg);
+				}
+				&::before
+				{
+					opacity: 1;
+					width: 100%;
+					height: 100%;
+				}
+				ul
+				{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

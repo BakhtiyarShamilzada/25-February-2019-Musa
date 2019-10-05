@@ -1,0 +1,28 @@
+#clients
+{
+	background: #f6f6f6;
+	.client-single
+	{
+		.images-single
+		{
+			width: 96px;
+			height: 96px;
+			img
+			{
+				border-radius: 100%;
+			}
+		}
+		h1
+		{
+			@include h1($mainFontSize*1.1, $mainFontWeight*1.5, $mainColor, $letterSpacing*2, $lineHeight);
+		}
+		.main-p
+		{
+			@include p($mainFontSize, $mainFontWeight, $mainColor8, $letterSpacing*2, $mainFontStyle2, $lineHeight);
+		}
+		.small-p
+		{
+			@include p($mainFontSize*0.9, $mainFontWeight, $mainColor8, $letterSpacing*2, $mainFontStyle2, $lineHeight);
+		}
+	}
+}

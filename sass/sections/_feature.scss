@@ -1,0 +1,52 @@
+#feature
+{
+	.section-heading
+	{
+		h1
+		{
+			@include h1($mainFontSize*2.3, $mainFontWeight*1.5, $mainColor4, $letterSpacing*2, $lineHeight);
+		}
+		p
+		{
+			@include p($mainFontSize, $mainFontWeight, $mainColor5, $letterSpacing*2, $mainFontStyle, $lineHeight);
+		}
+	}
+	.feature-single
+	{
+		margin: 0px -1px!important;
+		text-align: center;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+		.icon
+		{
+			position: relative;
+			top: -25px;
+			border-radius: 2px;
+			width: 50px;
+			height: 50px;
+			background: $mainColorBlack;
+			transition: $transition;
+			i
+			{
+				@include i(none, none, $mainColor3, $mainColor3, $lineHeight);
+			}
+		}
+		h1
+		{
+			font-family: $mainFontSansSerif;
+			@include h1($mainFontSize*1.4, $mainFontWeight, $mainColor4, $letterSpacing*2, $lineHeight);
+		}
+		p
+		{
+			@include p($mainFontSize*0.9, $mainFontWeight, $mainColor8, $letterSpacing*2, $mainFontStyle, $lineHeight);
+		}
+		&:hover
+		{
+			transition: $transition;
+			box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+			.icon
+			{
+				background: $mainColor;
+			}
+		}
+	}
+}
